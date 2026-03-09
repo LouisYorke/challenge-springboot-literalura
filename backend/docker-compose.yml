@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: api_book_db
+    restart: always
+    environment:
+      POSTGRES_DB: api_book
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: MI_CONTRASEÑA_SECRETA
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
